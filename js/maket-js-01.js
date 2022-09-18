@@ -79,3 +79,52 @@ cart.remove('🍎');
 // console.table(cart.getItems());
 
 // console.log('Total: ', cart.countTotalPrice());
+
+// ================================================
+
+// const book = {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     genres: ['historical prose', 'adventure'],
+//     isPublic: true,
+//     rating: 8.38,
+// };
+
+// const accessType = book.isPublic ? 'публічному' : 'закритому';
+// const message = `Книга ${book.title} автора ${book.author} з рейтингом ${book.rating} знаходиться в ${accessType} доступі.`;
+
+// console.log(accessType);
+
+// console.log(message);
+
+// const book = {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     genres: ['historical prose', 'adventure'],
+//     isPublic: true,
+//     rating: 8.38,
+// };
+
+// // Деструктуризуємо
+// const { title, author, isPublic, rating, coverImage } = book;
+// console.log(coverImage); // undefined
+
+// const accessType = isPublic ? 'публічному' : 'закритому';
+// const message = `Книга ${title} автора ${author} з рейтингом ${rating} знаходиться в ${accessType} доступі.`;
+// console.log(message);
+
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+// };
+
+// // Додамо зображення обкладинки, якщо воно відсутнє в об'єкті книги
+// const {
+//   title,
+//   coverImage = "https://via.placeholder.com/640/480",
+//   author,
+// } = book;
+
+// console.log(title); // The Last Kingdom
+// console.log(author); // Bernard Cornwell
+// console.log(coverImage); // https://via.placeholder.com/640/480  
