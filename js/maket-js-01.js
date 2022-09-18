@@ -25,9 +25,6 @@
 // };
 // console.log(getFriendsByOnlineStatus(friends));
 
-
-
-
 // =============================================
 /*
  * Работем с коллекцией товаров в корзине:
@@ -46,30 +43,69 @@
  */
 
 const cart = {
-  items: [],
-  getItems() {},
-  add(product) {},
-  remove(productName) {},
-  clear() {},
-  countTotalPrice() {},
-  increaseQuantity(productName) {},
-  decreaseQuantity(productName) {},
+    items: [],
+    getItems() {
+        return this.items;
+    },
+    add(product) {
+        for (const item of this.items) {
+            if (item.name === product.name) {
+                item.quantity += 1;
+                return;
+            }
+        }
+
+        const newProduct = {
+            ...product,
+            quantity: 1,
+        };
+        this.items.push(newProduct);
+    },
+    remove(productName) {
+        const { items } = this;
+
+        for (let i = 0; i < items.length; i += 1) {
+            const item = items[i];
+            if (productName === item.name) {
+                console.log('нашли такий обєкт', productName);
+                console.log('індекс', i);
+
+                items.splice(i, 1);
+            }
+        }
+    },
+    clear() {
+        this.items = [];
+    },
+    countTotalPrice() {
+        let total = 0;
+
+        for (const { price, quantity } of this.items) {
+            total += quantity * price;
+        }
+
+        return total;
+    },
+    increaseQuantity(productName) {},
+    decreaseQuantity(productName) {},
 };
 
-// console.table(cart.getItems());
+console.log(cart.getItems());
 
 cart.add({ name: '🍎', price: 50 });
-cart.add({ name: '🍋', price: 60 });
+cart.add({ name: '🍇', price: 60 });
 cart.add({ name: '🍋', price: 60 });
 cart.add({ name: '🍓', price: 110 });
+cart.add({ name: '🍓', price: 110 });
+cart.add({ name: '🍓', price: 110 });
+cart.add({ name: '🍓', price: 110 });
 
-// console.table(cart.getItems());
+console.table(cart.getItems());
 
-cart.remove('🍎');
-// console.table(cart.getItems());
+console.log('Total: ', cart.countTotalPrice());
 
-// cart.clear();
-// console.table(cart.getItems());
+cart.remove('🍋');
+console.table(cart.getItems());
 
 // cart.increaseQuantity('🍎');
 // console.table(cart.getItems());
@@ -78,7 +114,8 @@ cart.remove('🍎');
 // cart.decreaseQuantity('🍋');
 // console.table(cart.getItems());
 
-// console.log('Total: ', cart.countTotalPrice());
+cart.clear();
+console.log(cart.getItems());
 
 // ================================================
 
@@ -127,4 +164,4 @@ cart.remove('🍎');
 
 // console.log(title); // The Last Kingdom
 // console.log(author); // Bernard Cornwell
-// console.log(coverImage); // https://via.placeholder.com/640/480  
+// console.log(coverImage); // https://via.placeholder.com/640/480
