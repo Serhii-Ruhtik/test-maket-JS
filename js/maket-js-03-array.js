@@ -137,3 +137,59 @@
 // }
 
 // console.log(invertedString);
+
+
+
+/*
+=================Задача 8=====================
+ * Делаем slug в URL из названия статьи (например на dev.to)
+ * Заголовок статьи состоит только из букв и пробелов
+ *
+ * - Нормализируем строку
+ * - Разбиваем по словам
+ * - Сшиваем в строку с разделителями
+ */
+
+// Должно получиться top-10-benefits-of-react-framework
+// const title = 'Top 10 benefits of React framework';
+
+// const normalisedTitle = title.toLocaleLowerCase();
+// console.log(normalisedTitle);
+
+// const wordsArray = normalisedTitle.split(' ');
+// console.log(wordsArray);
+
+// const slug = wordsArray.join('-');
+// console.log(slug);
+
+// const slug1 = title.toLocaleLowerCase().split(' ').join('-');
+// console.log(slug1);
+
+/*
+================= Задача 9 =====================
+ * Напиши скрипт который считает сумму элементов двух массивов.
+ */
+
+const array1 = [5, 10, 15, 20];
+const array2 = [10, 20, 30];
+const oldClients = [15, 20, 60, 90];
+const newClients = [20, 10,];
+const allArray = array1.concat(array2, oldClients, newClients);
+// console.log(allArray);
+
+let total = 0;
+let smallNumber = allArray[0];
+
+
+for (const iterator of allArray) {
+    total += iterator;
+}
+console.log(total);
+
+
+for (const iterator of allArray) {
+    if(iterator < smallNumber){
+        smallNumber = iterator
+    }
+}
+console.log(smallNumber);
