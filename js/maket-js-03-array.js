@@ -59,8 +59,8 @@
  * - Метод includes() с тернарным оператором
  */
 
-const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
-const loginToFind = 'poly1scute';
+// const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+// const loginToFind = 'poly1scute';
 // let messsage = `Пользователь ${loginToFind} НЕ найден.`;
 
 // for (let i = 0; i < logins.length; i+= 1) {
@@ -73,8 +73,67 @@ const loginToFind = 'poly1scute';
 
 // }
 
-const messsage = logins.includes(loginToFind)
-    ? `Пользователь ${loginToFind} найден.`
-    : `Пользователь ${loginToFind} НЕ найден.`;
+// const messsage = logins.includes(loginToFind)
+//     ? `Пользователь ${loginToFind} найден.`
+//     : `Пользователь ${loginToFind} НЕ найден.`;
 
-console.log(messsage)
+// console.log(messsage)
+
+/*
+ * Напиши скрипт поиска самого маленького числа в массиве,
+ * при условии что числа уникальные (не повторяются).
+ */
+
+// const numbers = [51, 18, 13, 24, 7, 85, 19];
+// let smallestNumber = numbers[0];
+
+// for (const number of numbers) {
+//     if (number < smallestNumber) {
+//         smallestNumber = number;
+//     }
+// }
+// console.log(smallestNumber);
+
+/*
+ * Напиши скрипт, который объединяет все элементы массива в одно строковое значение.
+ * Элементов может быть произвольное кол-во.
+ * Пусть элементы массива  в строке будут разделены запятой.
+ * - Сначала через for
+ * - Потом через join()
+ */
+
+// const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+// let string = friends.join(', ');
+
+// console.log(string);
+
+// for (const friend of friends) {
+//     string += friend + ",";
+// }
+// console.log(string);
+
+/*
+ * Напиши скрипт который заменяет регистр каждого символа в строке на противоположный.
+ * Например, если строка «JavaScript», то на выходе должена быть строка «jAVAsCRIPT».
+ */
+
+// const string = 'JavaScript';
+// const letters = string.split('');
+// let invertedString = '';
+
+// for (const letter of letters) {
+//     // console.log(letter);
+//     // if (letter === letter.toLocaleLowerCase()) {
+//     //     console.log('Ця буква у верхньому регістрі - ', letter);
+//     //     invertedString += letter.toLocaleUpperCase();
+//     // } else {
+//     //     invertedString += letter.toLocaleLowerCase();
+//     // }
+
+//     invertedString +=
+//         letter === letter.toLocaleLowerCase()
+//             ? letter.toLocaleUpperCase()
+//             : letter.toLocaleLowerCase();
+// }
+
+// console.log(invertedString);
