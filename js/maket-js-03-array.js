@@ -170,26 +170,55 @@
  * Напиши скрипт который считает сумму элементов двух массивов.
  */
 
-const array1 = [5, 10, 15, 20];
-const array2 = [10, 20, 30];
-const oldClients = [15, 20, 60, 90];
-const newClients = [20, 10,];
-const allArray = array1.concat(array2, oldClients, newClients);
-// console.log(allArray);
+// const array1 = [5, 10, 15, 20];
+// const array2 = [10, 20, 30];
+// const oldClients = [15, 20, 60, 90];
+// const newClients = [20, 10,];
+// const allArray = array1.concat(array2, oldClients, newClients);
+// // console.log(allArray);
 
-let total = 0;
-let smallNumber = allArray[0];
-
-
-for (const iterator of allArray) {
-    total += iterator;
-}
-console.log(total);
+// let total = 0;
+// let smallNumber = allArray[0];
 
 
-for (const iterator of allArray) {
-    if(iterator < smallNumber){
-        smallNumber = iterator
-    }
-}
-console.log(smallNumber);
+// for (const iterator of allArray) {
+//     total += iterator;
+// }
+// console.log(total);
+
+
+// for (const iterator of allArray) {
+//     if(iterator < smallNumber){
+//         smallNumber = iterator
+//     }
+// }
+// console.log(smallNumber);
+
+
+
+/*
+================= Задача 10 =====================
+ * Работем с коллекцией карточек в trello
+ * - Метод splice()
+ * - Удалить
+ * - Добавить
+ * - Обновить
+ */
+
+// const cards = [
+//     'Карточка-1',
+//     'Карточка-2',
+//     'Карточка-3',
+//     'Карточка-4',
+//     'Карточка-5',
+//   ];
+  
+//   console.table(cards);
+  
+// ======================Delet element array==========================
+//   const deletedCard = cards.splice(0,2);
+//   console.table(cards);
+//   console.table(deletedCard);
+
+// cards.splice(3, 2, 'Карточка-6',);
+// console.table(cards);
