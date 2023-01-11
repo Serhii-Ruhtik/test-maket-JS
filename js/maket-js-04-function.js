@@ -109,8 +109,6 @@
 // console.log(findSmallesNumber([100, 54, 8, 12, 47])); // 8
 // console.log(findSmallesNumber([7, 21, 84, 15, 4])); // 4
 
-
-
 //================================ Задача № 5====================================
 /*
  * Напиши функцию changeCase(string) которая заменяет регистр
@@ -118,17 +116,112 @@
  * Например, если строка «JavaScript», то на выходе должена быть строка «jAVAsCRIPT».
  */
 
-const changeCase = function (string) {
-console.log(string);
-const letters = string.split('');
-cl
+// const changeCase = function (string) {
+// console.log(string);
+// const letters = string.split('');
+// let invertedString = '';
+// console.log(letters);
 
+// for (const letter of letters) {
+//     if (letter === letter.toLowerCase()) {
+//         invertedString += letter.toUpperCase();
+//     } else{
+//         invertedString += letter.toLowerCase();
+//     }
+// }
+// return invertedString;
+
+// }
+
+// const changeCase = function (string) {
+//         const letters = string.split('');
+//     let invertedString = '';
+
+//     for (const letter of letters) {
+//         const isInLowerCase = letter === letter.toLowerCase();
+//         invertedString += isInLowerCase
+//             ? letter.toUpperCase()
+//             : letter.toLowerCase();
+//     }
+//     return invertedString;
+// };
+
+// console.log(changeCase('JavaScript')); // jAVAsCRIPT
+// console.log(changeCase('qweRTY')); // QWErty
+// console.log(changeCase('mAnGo')); // MaNgO
+// console.log(changeCase('AjAx')); // aJaX
+
+/*================================ Задача № 6====================================
+ * Напиши функцию slugify(string) которая получает строку и возвращает URL-slug
+ * Строка состоит только из букв и пробелов
+ */
+
+// const slugify = function (string) {
+//     return string.toLowerCase().split(' ').join('-')
+// }
+
+//   console.log(slugify('Top 10 benefits of React framework'));
+//   console.log(slugify('Azure Static Web Apps are Awesome'));
+//   console.log(slugify('Technical writing tips for non-native English speakers'));
+
+// ======================== ARGUMENTS ==============================
+// const fn = function (a, b, c, ...args) {
+//   console.log(`${a} ${b} ${c}`);
+// //   console.log(args);
+// };
+
+// fn('hello', 1, 2, 3);
+// fn('aloha', 1, 2, 3, 4, 5);
+// fn('hi', 1, 2, 3, 4, 5, 6, 7);
+
+// function getExtremeElements(array) {
+//     // Change code below this line
+
+//     // const a = array[0];
+//     // const b = array.length - 1;
+//     // const c = array[b];
+
+//     // const newArray = [a, c];
+//     // console.log(newArray);
+
+//     return [array[0], array[array.length - 1]];
+
+//     // Change code above this line
+// }
+// ================= Задачи автоперевірки ================================
+// function makeArray(firstArray, secondArray, maxLength) {
+//     // Change code below this line
+//     // let newArray = [];
+
+//     // newArray = firstArray.concat(secondArray).slice(0, maxLength);
+
+//     // return newArray;
+
+// return firstArray.concat(secondArray).slice(0, maxLength);
+
+//     // Change code above this line
+// }
+
+// console.log(makeArray(['Mango', 'Poly'], ['Ajax', 'Chelsea'], 3)); //["Mango", "Poly", "Ajax"]
+// console.log(makeArray(['Mango', 'Poly', 'Houston'], ['Ajax', 'Chelsea'], 4)); //["Mango", "Poly", "Houston", "Ajax"]
+// console.log(makeArray(['Mango'], ['Ajax', 'Chelsea', 'Poly', 'Houston'], 3)); //["Mango", "Ajax", "Chelsea"]
+// console.log(makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus'], 2)); //["Earth", "Jupiter"]
+// console.log(makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus'], 4)); //["Earth", "Jupiter", "Neptune", "Uranus"]
+
+// =============================================================================
+
+function calculateTotal(number) {
+    // Change code below this line
+let total = 0;
+    for (let index = 0; index <= number; index += 1) {
+        total += index
+    }
+    return total;
+    // Change code above this line
 }
-
-
-
-
-console.log(changeCase('JavaScript')); // jAVAsCRIPT
-console.log(changeCase('qweRTY')); // QWErty
-console.log(changeCase('mAnGo')); // MaNgO
-console.log(changeCase('AjAx')); // aJaX
+console.log(calculateTotal(1));
+console.log(calculateTotal(3));
+console.log(calculateTotal(7));
+console.log(calculateTotal(18));
+console.log(calculateTotal(24));
+//повертає 1 //повертає 6 //повертає 28 //повертає 171 //повертає 300
