@@ -210,18 +210,103 @@
 
 // =============================================================================
 
-function calculateTotal(number) {
-    // Change code below this line
-let total = 0;
-    for (let index = 0; index <= number; index += 1) {
-        total += index
-    }
-    return total;
-    // Change code above this line
-}
-console.log(calculateTotal(1));
-console.log(calculateTotal(3));
-console.log(calculateTotal(7));
-console.log(calculateTotal(18));
-console.log(calculateTotal(24));
-//повертає 1 //повертає 6 //повертає 28 //повертає 171 //повертає 300
+// function calculateTotal(number) {
+//     // Change code below this line
+// let total = 0;
+//     for (let index = 0; index <= number; index += 1) {
+//         total += index
+//     }
+//     return total;
+//     // Change code above this line
+// }
+// console.log(calculateTotal(1));
+// console.log(calculateTotal(3));
+// console.log(calculateTotal(7));
+// console.log(calculateTotal(18));
+// console.log(calculateTotal(24));
+// //повертає 1 //повертає 6 //повертає 28 //повертає 171 //повертає 300
+
+// function calculateTotalPrice(order) {
+//     let total = 0;
+//     // Change code below this line
+//     for (let i = 0; i < order.length; i += 1) {
+//         total += order[i];
+//     }
+//     // Change code above this line
+//     return total;
+// }
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+// console.log(calculateTotalPrice([164, 48, 291]));
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
+// console.log(calculateTotalPrice());
+
+// ==============================================================================
+// Саме довше слово в рядку
+// ==============================================================================
+
+// function findLongestWord(string) {
+//     // Change code below this line
+//     let longWord = '';
+//     const word = string.split(' ');
+
+//     for (let i = 0; i < word.length; i += 1) {
+//         if (word[i].length > longWord.length) {
+//             longWord = word[i];
+//         }
+//     }
+
+//     console.log(word);
+//     return longWord;
+//     // Change code above this line
+// }
+
+// console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
+// console.log(findLongestWord('Google do a roll'));
+// console.log(findLongestWord('May the force be with you'));
+
+// ===============================================================================
+// ЗАДАЧА: ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ
+// ====================================================================================
+// function filterArray(numbers, value) {
+//     // Change code below this line
+//     let newArray = [];
+//     // console.log(numbers);
+//     // console.log(value);
+// for (let i = 0; i < numbers.length; i+= 1) {
+// if (numbers[i] > value) {
+//     newArray.push(numbers[i])
+// }
+// }
+// return newArray;
+//    // Change code above this line
+//  }
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3));  //повертає [4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5));  //повертає []
+// console.log(filterArray([1, 2, 3, 4, 5], 4));  //повертає [5]
+// console.log(filterArray([12, 24, 8, 41, 76], 38));  //повертає [41, 76]
+// console.log(filterArray([12, 24, 8, 41, 76], 20));  //повертає [24, 41, 76]
+
+// const numbers = [1, 2, 3, 4, 5, 6];
+// for (let i = 0; i < numbers.length; i += 1) {
+//     const element = numbers[i];
+//     console.log(element);
+// }
+
+// ================================================================================
+// ЗАДАЧА: СПІЛЬНІ ЕЛЕМЕНТИ
+// ================================================================================
+/*Спільними елементами масивів називають ті елементи, які присутні у всіх масивах.
+
+Наприклад, у двох масивах [1, 3, 5] і [0, 8, 5, 3] спільними будуть числа 3 і 5, оскільки вони присутні в обох вихідних масивах. А числа 0, 1 і 8 присутні тільки в одному з масивів.
+
+Напиши функцію getCommonElements(array1, array2), яка отримує два масиви довільної довжини в параметри array1 і array2, і повертає новий масив, що складається з тих елементів, які присутні в обох вихідних масивах.
+
+Оголошена функція getCommonElements(array1, array2)
+Виклик getCommonElements([1, 2, 3], [2, 4]) повертає [2]
+Виклик getCommonElements([1, 2, 3], [2, 1, 17, 19]) повертає [1, 2]
+Виклик getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]) повертає [12, 27, 3]
+Виклик getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]) повертає [10, 30, 40]
+Виклик getCommonElements([1, 2, 3], [10, 20, 30]) повертає []
+Виклик функції getCommonElements() з випадковими двома масивами повертає правильний масив
+В циклі for використовувалися методи includes і push*/
