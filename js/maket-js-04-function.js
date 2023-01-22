@@ -151,7 +151,7 @@
 // console.log(changeCase('mAnGo')); // MaNgO
 // console.log(changeCase('AjAx')); // aJaX
 
-/*================================ Задача № 6====================================
+/* ================================ Задача № 6====================================
  * Напиши функцию slugify(string) которая получает строку и возвращает URL-slug
  * Строка состоит только из букв и пробелов
  */
@@ -188,7 +188,7 @@
 
 //     // Change code above this line
 // }
-// ================= Задачи автоперевірки ================================
+//! ================= Задачи автоперевірки ================================
 // function makeArray(firstArray, secondArray, maxLength) {
 //     // Change code below this line
 //     // let newArray = [];
@@ -208,7 +208,7 @@
 // console.log(makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus'], 2)); //["Earth", "Jupiter"]
 // console.log(makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus'], 4)); //["Earth", "Jupiter", "Neptune", "Uranus"]
 
-// =============================================================================
+//! =============================================================================
 
 // function calculateTotal(number) {
 //     // Change code below this line
@@ -241,7 +241,7 @@
 // console.log(calculateTotalPrice());
 
 // ==============================================================================
-// Саме довше слово в рядку
+// !Саме довше слово в рядку
 // ==============================================================================
 
 // function findLongestWord(string) {
@@ -265,7 +265,7 @@
 // console.log(findLongestWord('May the force be with you'));
 
 // ===============================================================================
-// ЗАДАЧА: ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ
+//! ЗАДАЧА: ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ
 // ====================================================================================
 // function filterArray(numbers, value) {
 //     // Change code below this line
@@ -294,7 +294,7 @@
 // }
 
 // ================================================================================
-// ЗАДАЧА: СПІЛЬНІ ЕЛЕМЕНТИ
+//! ЗАДАЧА: СПІЛЬНІ ЕЛЕМЕНТИ
 // ================================================================================
 /*Спільними елементами масивів називають ті елементи, які присутні у всіх масивах.
 
@@ -310,3 +310,76 @@
 Виклик getCommonElements([1, 2, 3], [10, 20, 30]) повертає []
 Виклик функції getCommonElements() з випадковими двома масивами повертає правильний масив
 В циклі for використовувалися методи includes і push*/
+
+// function GetCommonelements(array1, array2) {
+//     let newArray = [];
+//     for (const i of array1) {
+//         if (array2.includes(i)) {
+//             newArray.push(i)
+//         }
+
+//     }
+//     return newArray;
+// }
+// console.log(getCommonElements([1, 2, 3], [2, 4]));
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19]));
+// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+// console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));
+// console.log(getCommonElements([1, 2, 3], [10, 20, 30]));
+
+// ========================================================================================
+// ! ЗАДАЧА: ПАРНІ ЧИСЛА
+// ========================================================================================
+
+// function getEvenNumbers(start, end) {
+//     // Change code below this line
+//    let evenNumders = []
+//  for (let i = start; i <= end; i += 1) {
+//    if (i % 2 === 0) {
+//      evenNumders.push(i);
+//    }
+//  }
+
+//  return evenNumders;
+//      // Change code above this line
+//    }
+
+//  console.log(getEvenNumbers(2, 5));  //повертає [2, 4]
+//  console.log(getEvenNumbers(3, 11));  //повертає [4, 6, 8, 10]
+//  console.log(getEvenNumbers(6, 12));  //повертає [6, 8, 10, 12]
+//  console.log(getEvenNumbers(8, 8));  //повертає [8]
+//  console.log(getEvenNumbers(7, 7));  //повертає []
+//  console.log(getEvenNumbers());
+
+// ===========================================================================================
+// ! ЗАДАЧА: ФУНКЦІЯ INCLUDES()
+// // ==========================================================================================
+// function includes(array, value) {
+
+//     for (const i of array) {
+//         if (i === value) {
+//             return true;
+//         }
+        
+//     }
+//     return false;
+// }
+
+
+
+
+
+
+
+// console.log(includes([1, 2, 3, 4, 5], 3)); //повертає true
+// console.log(includes([1, 2, 3, 4, 5], 17)); //повертає false
+// console.log(
+//     includes(['Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn'], 'Jupiter'),
+// ); //повертає true
+// console.log(
+//     includes(['Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn'], 'Uranus'),
+// ); //повертає false
+// console.log(includes(['apple', 'plum', 'pear', 'orange'], 'plum')); //повертає true
+// console.log(includes(['apple', 'plum', 'pear', 'orange'], 'kiwi')); //повертає false
+// console.log(includes()); //для випадкового масиву з випадковим value повертає правильний boolean
+// //У функції includes використовується for, return, але не метод масиву includes
