@@ -90,11 +90,113 @@
 //         this.name = newName;
 //     },
 
-    
 // };
 
 // playlist.changeName('New Playlist');
 
 // console.log(playlist);
 
-// *Задачи на практикуобєктів =============================================
+// !Задачи на практику об'єктів =============================================
+/*
+ ? Работа с коллекцией (массивом объектов)
+ */
+const friends = [
+    { name: 'Mango', online: false },
+    { name: 'Kiwi', online: true },
+    { name: 'Poly', online: false },
+    { name: 'Ajax', online: true },
+];
+
+console.table(friends);
+
+// for (const friend of friends) {
+//     console.log(friend);
+
+//     console.log(friend.name);
+
+//     friend.qweqwe = 123123;
+
+//     console.log(friend);
+// }
+/*
+ * Ищем друга по имени
+ */
+// const lookingFriendByName = function (allFriend, name) {
+//     for (const friend of allFriend) {
+//         console.log(friend);
+//         console.log(friend.name === name);
+//         if (friend.name === name) {
+//             return "НАЙШЛИ";
+//         }
+//     }
+//     return "Не найшли"
+// };
+// console.log(lookingFriendByName(friends, 'Kiwi123'));
+// console.log(lookingFriendByName(friends, 'Poly'));
+
+/*
+ * Отримати імена всіх друзів
+ */
+// const getAllNames = function (allFriend) {
+
+//     const names = [];
+
+//     for (const friend of allFriend) {
+//         // console.log(friend.name);
+//         names.push(friend.name);
+
+//     }
+
+//     return names;
+// };
+// console.log(getAllNames(friends));
+
+/*
+ * Отримаємо імена тільки друзів які онлайн
+ */
+// const getNameOnlineFriends = function (allFriends) {
+//     const onlineFriend = [];
+//     for (const friend of allFriends) {
+//         // console.log(friend.online);
+//         if (friend.online) {
+//             onlineFriend.push(friend);
+//         }
+//     }
+//     return onlineFriend;
+// };
+
+// console.log('Активні', getNameOnlineFriends(friends));
+
+// const getNameOfflineFriends = function (allFriends) {
+//     const offlineFriend = [];
+//     for (const friend of allFriends) {
+//         // console.log(friend.online);
+//         if (!friend.online) {
+//             offlineFriend.push(friend);
+//         }
+//     }
+//     return offlineFriend;
+// };
+
+// console.log('Не активні', getNameOfflineFriends(friends));
+
+const statusFriend = function (allFriends) {
+    const statusByFriend = {
+        online: [],
+        offline: [],
+    };
+
+    for (const friend of allFriends) {
+        if (friend.online) {
+            statusByFriend.online.push(friend);
+            continue;
+        }
+        statusByFriend.offline.push(friend);
+
+        //// const a = friend.online
+        // // ? statusByFriend.online.push(friend)
+        //// : statusByFriend.offline.push(friend);
+    }
+    return statusByFriend;
+};
+console.log(statusFriend(friends));
