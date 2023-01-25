@@ -100,14 +100,14 @@
 /*
  ? Работа с коллекцией (массивом объектов)
  */
-const friends = [
-    { name: 'Mango', online: false },
-    { name: 'Kiwi', online: true },
-    { name: 'Poly', online: false },
-    { name: 'Ajax', online: true },
-];
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: true },
+//     { name: 'Poly', online: false },
+//     { name: 'Ajax', online: true },
+// ];
 
-console.table(friends);
+// console.table(friends);
 
 // for (const friend of friends) {
 //     console.log(friend);
@@ -180,23 +180,58 @@ console.table(friends);
 
 // console.log('Не активні', getNameOfflineFriends(friends));
 
-const statusFriend = function (allFriends) {
-    const statusByFriend = {
-        online: [],
-        offline: [],
-    };
+// const statusFriend = function (allFriends) {
+//     const statusByFriend = {
+//         online: [],
+//         offline: [],
+//     };
 
-    for (const friend of allFriends) {
-        if (friend.online) {
-            statusByFriend.online.push(friend);
-            continue;
+//     for (const friend of allFriends) {
+//         if (friend.online) {
+//             statusByFriend.online.push(friend);
+//             continue;
+//         }
+//         statusByFriend.offline.push(friend);
+
+//         //// const a = friend.online
+//         // // ? statusByFriend.online.push(friend)
+//         //// : statusByFriend.offline.push(friend);
+//     }
+//     return statusByFriend;
+// };
+// console.log(statusFriend(friends));
+
+// ! Автоперевірка ЗАДАЧІ ===========================================
+
+function countProps(object) {
+    let propCount = 0;
+
+    for (const key in object) {
+        if (object.hasOwnProperty(key)) {
+            propCount += 1;
+            
         }
-        statusByFriend.offline.push(friend);
-
-        //// const a = friend.online
-        // // ? statusByFriend.online.push(friend)
-        //// : statusByFriend.offline.push(friend);
     }
-    return statusByFriend;
-};
-console.log(statusFriend(friends));
+
+    // Change code below this line
+//   for (const key in object) {
+//     if (object.hasOwnProperty(key)) {
+//         propCount += 1;
+        
+//     }
+//   }
+    // Change code above this line
+    return propCount;
+  }
+  console.log(countProps({}));  //повертає 0
+  console.log(countProps({ name: "Mango", age: 2 }));  //повертає 2
+  console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }));  //повертає 3
+
+
+//   for (const key in object) {
+//     if (object.hasOwnProperty(key)) {
+//     propCount +=1;
+//   }
+//   }
+//     // Change code above this line
+//     return propCount;
