@@ -235,35 +235,219 @@
 //   console.log(getProductPrice("Engine"));  //повертає null.
 
 //   *ЗАДАЧА: КОЛЕКЦІЯ ЗНАЧЕНЬ ВЛАСТИВОСТІ==================
-const products = [
-    { name: 'Radar', price: 1300, quantity: 4 },
-    { name: 'Scanner', price: 2700, quantity: 3 },
-    { name: 'Droid', price: 400, quantity: 7 },
-    { name: 'Grip', price: 1200, quantity: 9 },
-];
+// const products = [
+//     { name: 'Radar', price: 1300, quantity: 4 },
+//     { name: 'Scanner', price: 2700, quantity: 3 },
+//     { name: 'Droid', price: 400, quantity: 7 },
+//     { name: 'Grip', price: 1200, quantity: 9 },
+// ];
 
-function getAllPropValues(propName) {
-    // Change code below this line
-    let emptyArray = [];
-    for (const product of products) {
-        // console.log(product);
+// function getAllPropValues(propName) {
+//     // Change code below this line
+//     let emptyArray = [];
+//     for (const product of products) {
+//         // console.log(product);
 
-        const keys = Object.keys(product);
+//         const keys = Object.keys(product);
 
-        for (const key of keys) {
-            // console.log(key);
-            // console.log(product[key]);
+//         for (const key of keys) {
+//             // console.log(key);
+//             // console.log(product[key]);
 
-            if (propName === key) {
-                emptyArray.push(product[key]);
-            }
-        }
+//             if (propName === key) {
+//                 emptyArray.push(product[key]);
+//             }
+//         }
+//     }
+
+//     return emptyArray;
+//     // Change code above this line
+// }
+// console.log(getAllPropValues('quantity')); //повертає [4, 3, 7, 9]
+// console.log(getAllPropValues('price')); //повертає [1300, 2700, 400, 1200]
+// console.log(getAllPropValues('category')); //повертає []
+// console.log(getAllPropValues('name')); //повертає ["Radar", "Scanner", "Droid", "Grip"]
+
+// *ЗАДАЧА: ЗАГАЛЬНА ВАРТІСТЬ ТОВАРУ==============================================
+// const products = [
+//     { name: 'Radar', price: 1300, quantity: 4 },
+//     { name: 'Scanner', price: 2700, quantity: 3 },
+//     { name: 'Droid', price: 400, quantity: 7 },
+//     { name: 'Grip', price: 1200, quantity: 9 },
+// ];
+
+// function calculateTotalPrice(productName) {
+//     // Change code below this line
+//     let totalPrice = 0;
+//     for (const product of products) {
+
+//             if (productName === product.name) {
+//                 totalPrice = product.price * product.quantity;
+
+//         }
+//     }
+
+// return totalPrice;
+//     // Change code above this line
+// }
+// console.log(calculateTotalPrice("Blaster"));  //повертає 0
+// console.log(calculateTotalPrice("Radar"));  //повертає 5200
+// console.log(calculateTotalPrice("Droid"));  //повертає 2800
+// console.log(calculateTotalPrice("Grip"));  //повертає 10800
+// console.log(calculateTotalPrice("Scanner"));  //повертає 8100
+
+// *======== ЗАДАЧА. КАРТКИ ЗАВДАНЬ ====================================
+// function makeTask(data) {
+//     const completed = false;
+//     const category = "General";
+//     const priority = "Normal";
+//     // Change code below this line
+//     let objectData = {};
+//     objectData = { completed, category, priority, ...data,}
+
+//   return objectData;
+//     // Change code above this line
+//   }
+// console.log(makeTask({}));
+// //повертає { category: "General", priority: "Normal", completed: false }
+// console.log(makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" }));
+// //повертає { category: "Homemade", priority: "Low", text: "Take out the trash", completed: false }
+// console.log(makeTask({ category: "Finance", text: "Take interest" }));
+// //повертає { category: "Finance", priority: "Normal", text: "Take interest", completed: false }
+// console.log(makeTask({ priority: "Low", text: "Choose shampoo" }));
+// //повертає { category: "General", priority: "Low", text: "Choose shampoo", completed: false }
+// console.log(makeTask({ text: "Buy bread" }));
+// //повертає { category: "General", priority: "Normal", text: "Buy bread", completed: false }
+
+// *======== ЗАДАЧА. МАСИВ ЗБІГІВ ====================================
+// // Change code below this line
+// function findMatches(array, ...args) {
+//     const matches = []; // Don't change this line
+// //   console.log(args);
+
+//   for (const arg of args) {
+//     // console.log(arg);
+
+//     if (array.includes(arg)) {
+//         matches.push(arg);
+//     }
+//   }
+//     // Change code above this line
+//     return matches;
+//   }
+
+// console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));  //повертає [1, 2]
+// console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));  //повертає [17, 89, 2]
+// console.log(findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41));  //повертає [24, 9, 41]
+// console.log(findMatches([63, 11, 8, 29], 4, 7, 16));  //повертає []
+
+// const bookShelf = {
+//     books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
+//     updateBook(oldName, newName) {
+//         // Change code below this line
+//         // const bookIndex = this.books.indexOf(oldName);
+//         // this.books.splice(bookIndex, 1, newName);
+
+//         const bookShelf = this.books.indexOf(oldName);
+//         this.books.splice(bookShelf, 1, newName);
+
+//         return;
+
+//         // Change code above this line
+//     },
+// };
+// console.log(bookShelf.updateBook('Haze', 'Dungeon chronicles')); //значення властивості books - це масив ["The last kingdom", "Dungeon chronicles", "The guardian of dreams"]
+
+// console.log(bookShelf.updateBook('The last kingdom', 'Dune')); //значення властивості books - це масив ["Dune", "Haze", "The guardian of dreams"]
+
+// *=================================================================================
+
+const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Dragon breath", price: 780 },
+    { name: "Stone skin", price: 520 },
+  ],
+  // Change code below this line
+  getPotions() {
+    return this.potions;
+  },
+addPotion(newPotion) {
+        const {potions} = this;
+    for (let i = 0; i < potions.length; i += 1) {
+        const item = potions[i];
+      if (item.name === newPotion.name) {
+         return `Error! Potion ${newPotion.name} is already in your inventory!`;
+      }
+    }
+  potions.push(newPotion);
+  },
+  removePotion(potionName) {
+        const {potions} = this;
+    for (let i = 0; i < potions.length;i+=1) {
+      if (potions[i].name === potionName) {
+        potions.splice(i, 1);
+        return;
+      }
+    }
+      return `Potion ${potionName} is not in inventory!`;
+  },
+  updatePotionName(oldName, newName) {
+    const potionIndex = this.potions.indexOf(oldName);
+
+    if (potionIndex === -1) {
+      return `Potion ${oldName} is not in inventory!`;
     }
 
-    return emptyArray;
-    // Change code above this line
-}
-console.log(getAllPropValues('quantity')); //повертає [4, 3, 7, 9]
-console.log(getAllPropValues('price')); //повертає [1300, 2700, 400, 1200]
-console.log(getAllPropValues('category')); //повертає []
-console.log(getAllPropValues('name')); //повертає ["Radar", "Scanner", "Droid", "Grip"]
+    this.potions.splice(potionIndex, 1, newName);
+  },
+  updatePotionName(oldName, newName) {
+        const {potions} = this;
+    for (const potion of potions) {
+      if (potion.name === oldName) {
+        potion.name = newName;
+        return;
+      }
+    }
+  },
+  // Change code above this line
+};
+
+
+// const atTheOldToad = {
+//     potions: [
+//         { name: 'Speed potion', price: 460 },
+//         { name: 'Dragon breath', price: 780 },
+//         { name: 'Stone skin', price: 520 },
+//     ],
+//     // Change code below this line
+//     getPotions() {
+//         return this.potions;
+//     },
+//     addPotion(newPotion) {
+//         if (this.potions.includes(newPotion)) {
+//             return `Error! Potion ${newPotion} is already in your inventory!`;
+//         }
+
+//         this.potions.push(newPotion);
+//     },
+//     removePotion(potionName) {
+//         const potionIndex = this.potions.indexOf(potionName);
+
+//         if (potionIndex === -1) {
+//             return `Potion ${potionName} is not in inventory!`;
+//         }
+
+//         this.potions.splice(potionIndex, 1);
+//     },
+//     updatePotionName(oldName, newName) {
+//         const potionIndex = this.potions.indexOf(oldName);
+
+//         if (potionIndex === -1) {
+//             return `Potion ${oldName} is not in inventory!`;
+//         }
+
+//         this.potions.splice(potionIndex, 1, newName);
+//     },
+//     // Change code above this line
+// };
