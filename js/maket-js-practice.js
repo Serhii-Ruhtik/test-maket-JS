@@ -10,14 +10,14 @@
 
 // // console.log(obj);
 // const checkObjectKey = function (key) {
-//     // todo ===== VERSION 1 =========
-//     // const a = Object.keys(obj);
-//     // return a.includes(key);
+// todo ===== VERSION 1 =========
+// const a = Object.keys(obj);
+// return a.includes(key);
 
-//     // todo ===== VERSION 2 =========
-//     // return Boolean(obj[key]);
+// todo ===== VERSION 2 =========
+// return Boolean(obj[key]);
 
-//     // todo ===== VERSION 3 =========
+// todo ===== VERSION 3 =========
 //     return key in obj;
 // };
 
@@ -103,20 +103,20 @@
 // }
 
 // function totalSalar(salaries) {
-//     // todo ===== VERSION 1 =========
-//     // let sum = 0;
-//     // const values = Object.values(salaries);
-//     // for (const value of values) {
-//     //     sum += value;
-//     // }
-//     // return sum;
+// todo ===== VERSION 1 =========
+// let sum = 0;
+// const values = Object.values(salaries);
+// for (const value of values) {
+//     sum += value;
+// }
+// return sum;
 
-//     // todo ===== VERSION 2 =========
-//     // let sum = 0;
-//     // for (const key in salaries) {
-//     //     sum += salaries[key];
-//     // }
-//     // return sum;
+// todo ===== VERSION 2 =========
+// let sum = 0;
+// for (const key in salaries) {
+//     sum += salaries[key];
+// }
+// return sum;
 
 // }
 // console.log(totalSalar(salaries));
@@ -135,16 +135,16 @@
 // ];
 
 // function calcTotalPrice(stones, stonesName) {
-//     // todo ===== VERSION 1 ===================
-//     // let total = 0;
-//     // let name = stonesName
-//     // for (const key of stones) {
-//     //     // console.log(key.name);
-//     //     if (key.name === stonesName) {
-//     //         total = key.price * key.quantity
-//     //     }
-//     // }
-//     // return name + ' ' + '-' + ' ' + total;
+// todo ===== VERSION 1 ===================
+// let total = 0;
+// let name = stonesName
+// for (const key of stones) {
+//     // console.log(key.name);
+//     if (key.name === stonesName) {
+//         total = key.price * key.quantity
+//     }
+// }
+// return name + ' ' + '-' + ' ' + total;
 
 //     // todo ===== VERSION 2 ====================
 //     const stone = stones.find(element => element.name === stonesName);
@@ -172,24 +172,50 @@
 // function addArray(...arg) {
 // todo ===== VERSION 1 ========= flatMap ==========
 
-//return arg.flatMap(element => element);
-
-//     // todo ===== VERSION 2 ========= concat ==========
-
-//     // let newArray = [];
-
-//     // for (const array of arg) {
-//     //     console.log(array);
-
-//     //     newArray = newArray.concat(array);
-//     // }
-//     // return newArray;
-
-//     // // todo ===== VERSION 2 ========= map ==========
-//     // return arg.map(element => [element, ...element]);
+//return arg.flatMap(element => elem// todo ===== VERSION 2 ========= concat =====// let newArray // for (const array of //     console.log(ar//     newArray = newArray.concat(a// return newA// // todo ===== VERSION 2 ========= map ====// return arg.map(element => [element, ...element]);
 // }
 
 //!===================================================
 
 //!======= Problem 7 =================================
+//* Напишіть функцію щоб видалити всі елементи в заданому масиві
+//* Функція `deleteElement()` видаляє всі входження елемента в заданому масиву.
 
+// let arr = [23, 56, 4, 78, 5, 63, 45, 210, 56];
+// arr = deleteElement(arr, 56);
+// console.log(arr);
+// function deleteElement(arr, deletNum) {
+// //todo ===== VERSION 1 ========= splise ==========
+// for (let i = 0; i < arr.length; i += 1) {
+//     if (arr[i] === deletNum) {
+//         arr.splice(i, 1);
+//     }
+// }
+// return arr;
+//todo ===== VERSION 2 ========= filter ==========
+//     return arr.filter(value => value !== deletNum);
+//};
+
+//!===================================================
+
+//!======= Problem 8 =================================
+//* Напишіть функцію sumInput(), яка:
+//* Просить користувачаввести значення, використовуючи prompt та зберігає їх у масив.
+//* Закінчує запитувати значення, коли користувач введе не числове значення, порожній рядок або натисне "Скасувати".
+//* Підраховує та повертає суму елементів масиву.
+//* P.S. Нуль 0 - вважається числом, не зупиняйте введення значень під час ведення "0"  
+
+function sumInput (){
+    let userAnswer;
+    let array = [];
+
+    do {
+        userAnswer = prompt('Введіть число');
+
+        array.push(Number(userAnswer));
+    } while(userAnswer)
+    console.log(array);
+
+}
+
+sumInput();
