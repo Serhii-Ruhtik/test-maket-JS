@@ -48,12 +48,88 @@
 //         customerCredits - totalPrice
 //     } credits left`;
 //     // Change code below this line
-    
+
 //     if (totalPrice > customerCredits) {
 //         message = 'Insufficient funds!';
-//     } 
-    
+//     }
+
 //     // Change code above this line
 //     return message;
 // }
 // console.log(makeTransaction(1000, 3, 15000));
+
+// class User {
+//     static Roles = {
+//         ADMIN: 'admin',
+//         EDITOR: 'editor',
+//     };
+
+//     #email;
+//     #role;
+//     constructor({ name, email, role, followers }) {
+//         this.name = name;
+//         this.#email = email;
+//         this.#role = role;
+//         this.followers = followers;
+//     }
+
+//     get email() {
+//         return this.#email;
+//     }
+
+//     set email(newEmail) {
+//         this.#email = newEmail;
+//         return this.#email;
+//     }
+
+//     get role(){
+//         return this.#role;
+//     }
+
+//     set role(newRole){
+//         this.#role = newRole;
+//     }
+// }
+
+// const mango = new User({
+//     name: 'Mango',
+//     email: 'mango@email.com',
+//     role: User.Roles.ADMIN,
+// });
+// console.log(mango);
+// console.log(User.Roles);
+// mango.role = User.Roles.EDITOR
+// console.log(mango.role);
+
+// const poly = new User({
+//     name: 'Poly',
+//     email: 'poly@email.com',
+//     followers: 2000,
+// });
+// console.log(poly);
+// console.log(mango.getEmail());
+// console.log(poly.getEmail());
+
+// console.log(mango.changeEmail('mango1@email.com'));
+// console.log(poly.getEmail());
+
+
+//! class User {
+//     static #takenEmails = [];
+  
+//     static isEmailTaken(email) {
+//       return User.#takenEmails.includes(email);
+//     }
+  
+//     #email;
+  
+//     constructor({ email }) {
+//       this.#email = email;
+//       User.#takenEmails.push(email);
+//     }
+//   }
+  
+//   const mango = new User({ email: "mango@mail.com" });
+  
+//   console.log(User.isEmailTaken("poly@mail.com"));
+//   console.log(User.isEmailTaken("mango@mail.com"));
