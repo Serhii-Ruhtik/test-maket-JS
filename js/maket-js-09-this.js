@@ -10,15 +10,24 @@
 
 // console.log(person.sayHello());
 
-
 // const user = {
 //     tag: 'Mango',
 //     showTag(){
-//         console.log('showTag -> this', this);
+//         console.log('showTag -> this', this);//1 спосіб строгий режим працює
 //     },
+
+//     showTag1: function () {
+//         console.log('showTag -> this', this);//2 спосіб строгий режим працює
+//     },
+
+//     showTag2: () => {
+//         console.log('showTag -> this', this);//3 спосіб строгий режим не працює
+//     }
 // }
 
-// user.showTag();
+// user.showTag();//1 спосіб строгий режим працює
+// user.showTag1();//2 спосіб строгий режим працює
+// user.showTag2();//3 спосіб строгий режим не працює
 
 /*
  * Вызов без контекста
@@ -46,7 +55,7 @@
 
 // const user ={
 //     tag: 'Mango'
-// }; 
+// };
 // console.log('user', user);
 
 // я додаю в user нову властивість showUserTag із значенням записую посилання на функцію showTag.
@@ -101,7 +110,7 @@
 //     console.log('fn -> this', this);
 // };
 
-//fn(); // Какой this ??? 
+//fn(); // Какой this ???
 
 /*
  * Тренируемся 2
@@ -162,7 +171,7 @@
 // const makeChangeColor = function () {
 //     const changeColor = function (color) {
 //         console.log('changeColor -> this', this);
-    
+
 //     };
 
 //     return changeColor;
@@ -235,13 +244,11 @@
 
 // const hat = {
 //     color: 'black',
-    
+
 // };
 // console.log(hat);
 // changeColor.call(hat, 'orange');
 // console.log(hat);
-
-
 
 // const sweater = {
 //     color: 'green',
@@ -256,8 +263,6 @@
 // const changeHatColor = changeColor.bind(hat);
 // const changeSweaterColor = changeColor.bind(sweater);
 
-
-
 // changeHatColor('yellow');
 // console.log(hat);
 
@@ -265,45 +270,130 @@
 // console.log(sweater);
 
 //!===========================================================================
+//! Тренуємось вирішувати задачі. Ключове слово this.
+//!===========================================================================
+// todo=====================================================================
+// const shop = {
+//     stones: [
+//         { name: 'Ruby', price: 100, qty: 10 },
+//         { name: 'Diamond', price: 150, qty: 15 },
+//         { name: 'Saphire', price: 200, qty: 20 },
+//     ],
+
+//     calcTotalPrise(stoneName) {
+//         const jem = this.stones.find(stone => stone.name === stoneName);
+
+//         if (jem) {
+//             const { price, qty } = jem;
+//             return price * qty;
+//         }
+//         return 'not stone';
+//     },
+// };
+
+// console.log(shop.calcTotalPrise('Diamond'));
+
+// console.log(shop.calcTotalPrise('asdf'));
+// todo====================================================================
+// ?======================================================================
+// const calculator = {
+//     a: null,
+//     b: 0,
+//     read(a, b) {
+//         this.a = a,
+//         this.b = b
+//     },
+//     add() {
+//         return this.a + this.b;
+//     },
+//     mult() {
+//         return this.a * this.b;
+//     },
+// };
+
+// calculator.read(7, 7);
+// console.log(calculator.a, calculator.b);
+// console.log(calculator.add());
+// console.log(calculator.mult());
+
+// ?========================================================================
+// todo====================================================================
+// const icon = {
+//     _color: '#fff',
+//     _size: '24px',
+//     _padding: '16px',
+
+//     color(newColor) {
+//         this._color = newColor;
+//         return this;
+//     },
+//     size(newSize) {
+//         this._size = newSize;
+//         return this;
+//     },
+//     padding(newP) {
+//         this._padding = newP;
+//         return this;
+//     },
+// };
+
+// // console.log(icon);
+
+// // icon.color('blue');
+// // icon.size('40px');
+// // icon.padding('60px');
+// // console.log(icon);
+
+// icon.color('blue').size('40px').padding('60px');
+// console.log(icon);
+
+// todo====================================================================
+// ?=======================================================================
+// function sayHello() {
+//     console.log('sayHello', this);
+// }
+
+// ?=======================================================================
+//!===========================================================================
 //! Застосування методів функції.
 //!===========================================================================
 
-const counter =  {
-    value: 0,
-    increment(){
-        console.log('increment -> this', this);
-        this.value += 1;
-    },
-    decrement(){
-        console.log('decrement -> this', this);
-        this.value -= 1;
-    },
+// const counter =  {
+//     value: 0,
+//     increment(){
+//         console.log('increment -> this', this);
+//         this.value += 1;
+//     },
+//     decrement(){
+//         console.log('decrement -> this', this);
+//         this.value -= 1;
+//     },
 
-};
+// };
 
-const incrementBtn = document.querySelector('.js-increment');
-const decrementBtn = document.querySelector('.js-decrement');
-const valueEl = document.querySelector('.js-value');
+// const incrementBtn = document.querySelector('.js-increment');
+// const decrementBtn = document.querySelector('.js-decrement');
+// const valueEl = document.querySelector('.js-value');
 
-console.log(incrementBtn);
-console.log(decrementBtn);
-console.log(valueEl);
+// console.log(incrementBtn);
+// console.log(decrementBtn);
+// console.log(valueEl);
 
-decrementBtn.addEventListener('click', function () {
-    console.log('Зменшити значення');
+// decrementBtn.addEventListener('click', function () {
+//     console.log('Зменшити значення');
 
-    counter.decrement();
-    console.log(counter);
+//     counter.decrement();
+//     console.log(counter);
 
-    valueEl.textContent = counter.value;
+//     valueEl.textContent = counter.value;
 
-});
+// });
 
-incrementBtn.addEventListener('click', function () {
-    console.log('Добавити значення');
+// incrementBtn.addEventListener('click', function () {
+//     console.log('Добавити значення');
 
-    counter.increment();
-    console.log(counter);
+//     counter.increment();
+//     console.log(counter);
 
-    valueEl.textContent = counter.value;
-});
+//     valueEl.textContent = counter.value;
+// });
